@@ -1,0 +1,91 @@
+.home {
+  background-image: url('assets/img/home/background.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 1;
+  }
+
+  .home-description {
+    position: relative;
+    z-index: 2;
+    padding: 0 30px;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 30px;
+    }
+
+    .github-logo {
+      height: 125px;
+      width: auto;
+      fill: #fff;
+      display: block;
+      margin: 0 auto 2rem;
+    }
+
+    .title {
+      color: #fff;
+      font-size: 2rem;
+      margin: 0 0 2rem;
+      font-weight: 300;
+
+      @media screen and (min-width: 768px) {
+        font-size: 4rem;
+
+      }
+    }
+  }
+
+  .search-wrapper {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: 992px) {
+      width: 25%;
+    }
+
+    .search-form {
+      display: flex;
+
+      .search-input {
+        background: none;
+        border: 0;
+        border-bottom: 2px solid #fff;
+        width: 100%;
+        padding: 15px 35px 15px 10px;
+        color: #fff;
+      }
+
+      .search-button {
+        background: none;
+        border: 0;
+        color: #fff;
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1px;
+        cursor: pointer;
+      }
+    }
+  }
+}
