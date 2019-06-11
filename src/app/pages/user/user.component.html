@@ -1,0 +1,68 @@
+<div class="user">
+  <div class="container">
+    <div class="user-content">
+      <div class="user-header">
+        <img class="user-image" src="assets/img/users/matheus-ochi.jpeg" alt="">
+
+        <div class="user-info">
+          <h1 class="name">Matheus Ochi</h1>
+          <p class="username">@matheusochi</p>
+          <h2 class="description">Front-end Developer, Javascript Enthusiastic</h2>
+
+          <ul class="additional-info">
+            <li>
+              <fa name="users"></fa>
+              Revelare
+            </li>
+            <li>
+              <fa name="map-marker"></fa>
+              Bauru, SP, Brasil
+            </li>
+            <li>
+              <fa name="envelope"></fa>
+              <a href="mailto:matheus@revelare.com.br">matheus@revelare.com.br</a>
+            </li>
+          </ul>
+          <div class="social">
+            <div class="item followers">1 <br>Follower</div>
+            <div class="item following">1 <br>Following</div>
+            <div class="item repos">1 <br>Repos</div>
+          </div>
+        </div>
+      </div>
+      <div class="user-repositories">
+        <h2 class="title">Repositories</h2>
+
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="stars">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Stars</th>
+            <td mat-cell *matCellDef="let element"> {{element.stars}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="forks">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Forks</th>
+            <td mat-cell *matCellDef="let element"> {{element.forks}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+            <td mat-cell *matCellDef="let element"> Abrir </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

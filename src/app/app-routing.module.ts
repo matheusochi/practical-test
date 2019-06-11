@@ -6,6 +6,10 @@ const routes: Routes = [
     path: 'home',
     loadChildren: '@pages/home/home.module#HomeModule'
   },
+  {
+    path: 'user',
+    loadChildren: '@pages/user/user.module#UserModule'
+  },
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
