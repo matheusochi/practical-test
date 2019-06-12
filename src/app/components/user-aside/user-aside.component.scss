@@ -51,7 +51,7 @@
     .description {
       font-weight: 400;
       margin-top: 10px;
-      font-size: 1.0rem;
+      font-size: .9rem;
       @include overflow-wrap;
     }
 
@@ -77,7 +77,7 @@
     .social {
       display: grid;
       grid-template-columns: 33% 33% 33%;
-      margin-top: 2rem;
+      margin-top: 1rem;
 
       .item {
         text-align: center;

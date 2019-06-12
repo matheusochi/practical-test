@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
 import {UserService} from '@core/services/user.service';
 import {Repository, User} from '@core/models';
 import {ActivatedRoute} from '@angular/router';
@@ -29,9 +30,11 @@ export class UserComponent implements OnInit {
   dataSource = new MatTableDataSource(this.repositories);
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
 
     this.username = this.route.snapshot.paramMap.get('username');
 
