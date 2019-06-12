@@ -1,29 +1,29 @@
 <div class="user-aside" *ngIf="user">
-  <img class="user-image" [src]="user.avatar_url" alt="">
+  <img class="user-image" *ngIf="user.avatar_url" [src]="user.avatar_url" alt="">
 
   <div class="user-info">
-    <h1 class="name">{{user.name}}</h1>
-    <p class="username">{{user.login}}</p>
-    <h2 class="description">{{user.bio}}</h2>
+    <h1 class="name" *ngIf="user.name">{{user.name}}</h1>
+    <p class="username" *ngIf="user.login">{{user.login}}</p>
+    <h2 class="description" *ngIf="user.bio">{{user.bio}}</h2>
 
     <ul class="additional-info">
-      <li>
+      <li *ngIf="user.company">
         <fa name="users"></fa>
-        Revelare
+        {{user.company}}
       </li>
-      <li>
+      <li *ngIf="user.location">
         <fa name="map-marker"></fa>
-        Bauru, SP, Brasil
+        {{user.location}}
       </li>
-      <li>
+      <li *ngIf="user.email">
         <fa name="envelope"></fa>
-        <a href="mailto:matheus@revelare.com.br">matheus@revelare.com.br</a>
+        <a [href]="'mailto:' + user.email">{{user.email}}</a>
       </li>
     </ul>
     <div class="social">
-      <div class="item followers">1 <br>Follower</div>
-      <div class="item following">1 <br>Following</div>
-      <div class="item repos">1 <br>Repos</div>
+      <div class="item followers" *ngIf="user.followers">{{user.followers}} <br>Follower</div>
+      <div class="item following" *ngIf="user.following">{{user.following}} <br>Following</div>
+      <div class="item repos" *ngIf="user.public_repos">{{user.public_repos}} <br>Repos</div>
     </div>
   </div>
 </div>

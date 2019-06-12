@@ -1,4 +1,4 @@
-<div class="spinner" [hidden]="!showLoader">
+<div class="spinner" *ngIf="showLoader">
   <mat-spinner [diameter]="50"></mat-spinner>
 </div>
 
