@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   title: 'Test System',
   url: 'https://api.github.com/',
-  token: 'b614baecd6034ebd7027b36549bd16bb8caaf77d',
+  token: 'token-do-gh',
 };
 
 

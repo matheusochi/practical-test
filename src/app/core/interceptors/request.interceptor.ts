@@ -6,15 +6,18 @@ import {catchError, finalize, map, filter, tap} from 'rxjs/operators';
 import {environment} from '@env/environment';
 import {MessagesService} from '@core/services/messages.service';
 import {LoaderService} from '@core/services/loader.service';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class RequestInterceptor implements HttpInterceptor {
 
   constructor(
     private loaderService: LoaderService,
     private messagesService: MessagesService,
+    private router: Router
   ) {
   }
 
@@ -77,6 +80,7 @@ export class RequestInterceptor implements HttpInterceptor {
     message = Boolean(message) ? message : httpError.error.message;
 
     this.messagesService.showSnackbar(message, 'error');
+    this.router.navigateByUrl('home');
     return throwError(httpError);
   }
 
