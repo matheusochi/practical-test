@@ -1,27 +1,29 @@
 <div class="repository">
   <div class="container">
     <div class="repository-content">
+      <div class="repository-content-header">
+        <a class="link" [routerLink]="['/user/' + user.login]">
+          <fa name="arrow-left"></fa> <span class="link-text">Back</span>
+        </a>
+      </div>
 
       <app-user-aside [user]="this.user"></app-user-aside>
 
       <div class="repository-info-wrapper" *ngIf="this.repository">
         <div class="repository-info">
-          <h1 class="title">{{repository.name}} <a class="repository-link" href="#"><fa name="external-link"></fa></a></h1>
-          <p class="description">One framework. Mobile & desktop. https://angular.io</p>
+          <h1 *ngIf="repository.full_name" class="title">{{repository.full_name}} <a class="repository-link" [href]="repository.html_url" target="_blank"><fa name="external-link"></fa></a></h1>
+          <p *ngIf="repository.description" class="description">{{repository.description}}</p>
           <div class="repository-numbers">
-            <p class="repository-stars item">
-              <fa name="star"></fa> Stars: 48.491
+            <p *ngIf="repository.stargazers_count" class="repository-stars item">
+              <fa name="star"></fa> Stars: {{repository.stargazers_count}}
             </p>
 
-            <p class="repository-forks item">
-              <fa name="code-fork"></fa> Forks: 50.000
+            <p *ngIf="repository.forks_count" class="repository-forks item">
+              <fa name="code-fork"></fa> Forks: {{repository.forks_count}}
             </p>
           </div>
-          <div class="repository-languages">
-            <div class="item">angular</div>
-            <div class="item">typescript</div>
-            <div class="item">web</div>
-            <div class="item">javascript</div>
+          <div *ngIf="repository.language" class="repository-languages">
+            <div class="item">{{repository.language}}</div>
           </div>
         </div>
       </div>

@@ -6,13 +6,15 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome'
 import { RepositoryRoutingModule } from './repository-routing.module';
 import { RepositoryComponent } from './repository.component';
 import { UserAsideModule } from '@components/user-aside/user-aside.module';
+import { MaterialModule } from '@core/modules/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RepositoryRoutingModule,
     AngularFontAwesomeModule,
-    UserAsideModule
+    UserAsideModule,
+    MaterialModule
   ],
   declarations: [
     RepositoryComponent
