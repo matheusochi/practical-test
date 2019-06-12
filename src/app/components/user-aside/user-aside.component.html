@@ -1,10 +1,10 @@
-<div class="user-aside">
-  <img class="user-image" src="assets/img/users/matheus-ochi.jpeg" alt="">
+<div class="user-aside" *ngIf="user">
+  <img class="user-image" [src]="user.avatar_url" alt="">
 
   <div class="user-info">
-    <h1 class="name">Matheus Ochi</h1>
-    <p class="username">@matheusochi</p>
-    <h2 class="description">Front-end Developer, Javascript Enthusiastic</h2>
+    <h1 class="name">{{user.name}}</h1>
+    <p class="username">{{user.login}}</p>
+    <h2 class="description">{{user.bio}}</h2>
 
     <ul class="additional-info">
       <li>

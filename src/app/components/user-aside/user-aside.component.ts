@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
+import {User} from '@core/models';
 
 @Component({
   selector: 'app-user-aside',
@@ -7,5 +9,5 @@ import {Component} from '@angular/core';
 })
 
 export class UserAsideComponent {
-
+  @Input() user: User;
 }

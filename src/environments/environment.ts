@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  title: 'Test System',
+  url: 'https://api.github.com/',
+  token: '2c71dc3f813abe703437e35916025b0f9e716e03',
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

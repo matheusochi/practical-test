@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  title: 'Test System',
+  url: 'https://api.github.com/',
 };
