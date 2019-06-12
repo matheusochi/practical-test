@@ -14,7 +14,8 @@ const routes: Routes = [
     path: 'repository',
     loadChildren: '@pages/repository/repository.module#RepositoryModule'
   },
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

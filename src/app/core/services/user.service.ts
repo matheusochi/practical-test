@@ -30,7 +30,7 @@ export class UserResponse {
   providedIn: 'root'
 })
 export class UserService {
-  private endpoint = 'users/';
+  private endpoint = 'users';
 
   constructor(
     private http: HttpClient,
@@ -38,7 +38,7 @@ export class UserService {
   }
 
   find(username: string): Observable<any> {
-    return this.http.get(this.endpoint + username)
+    return this.http.get(this.endpoint + '/' + username)
       .pipe(
         map((data) => {
           data = new UserResponse(data);

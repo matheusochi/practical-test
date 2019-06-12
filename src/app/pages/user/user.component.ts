@@ -3,20 +3,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {UserService} from '@core/services/user.service';
-import {User} from '@core/models';
+import {Repository, User} from '@core/models';
 import {ActivatedRoute} from '@angular/router';
-
-export interface PeriodicElement {
-  name: string;
-  stars: string;
-  forks: string;
-}
-
-const REPOSITORY_DATA: PeriodicElement[] = [
-  {name: 'Angular', stars: '48.9k', forks: '13.2k'},
-  {name: 'Angular', stars: '49.9k', forks: '13.2k'},
-  {name: 'Angular', stars: '48.9k', forks: '13.2k'}
-];
+import {RepositoryService} from '@core/services/repository.service';
 
 @Component({
   selector: 'app-user',
@@ -28,14 +17,16 @@ const REPOSITORY_DATA: PeriodicElement[] = [
 export class UserComponent implements OnInit {
   public username: string;
   public user: User;
+  public repositories: Repository[];
   constructor(
     private userService: UserService,
+    private repositoryService: RepositoryService,
     private route: ActivatedRoute,
   ) {
   }
 
-  displayedColumns: string[] = ['name', 'stars', 'forks', 'actions'];
-  dataSource = new MatTableDataSource(REPOSITORY_DATA);
+  displayedColumns: string[] = ['name', 'stargazers_count', 'forks_count', 'actions'];
+  dataSource = new MatTableDataSource(this.repositories);
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -47,6 +38,12 @@ export class UserComponent implements OnInit {
     this.userService.find(this.username)
       .subscribe((response) => {
         this.user = response.data;
+
+        this.repositoryService.get(this.username)
+          .subscribe((responseRepos) => {
+            this.repositories = responseRepos.data;
+            this.dataSource.data = this.repositories;
+          });
       });
   }
 

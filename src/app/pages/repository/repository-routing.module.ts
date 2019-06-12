@@ -4,7 +4,7 @@ import { RepositoryComponent } from './repository.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':username/:repo',
     component: RepositoryComponent
   },
 ];

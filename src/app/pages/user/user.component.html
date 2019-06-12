@@ -7,7 +7,7 @@
       <div class="user-repositories">
         <h2 class="title">Repositories</h2>
 
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="stargazers_count" matSortDirection="desc" class="mat-elevation-z8">
 
           <!-- Position Column -->
           <ng-container matColumnDef="name">
@@ -16,20 +16,20 @@
           </ng-container>
 
           <!-- Name Column -->
-          <ng-container matColumnDef="stars">
+          <ng-container matColumnDef="stargazers_count">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Stars</th>
-            <td mat-cell *matCellDef="let element"> {{element.stars}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.stargazers_count}} </td>
           </ng-container>
 
           <!-- Weight Column -->
-          <ng-container matColumnDef="forks">
+          <ng-container matColumnDef="forks_count">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Forks</th>
-            <td mat-cell *matCellDef="let element"> {{element.forks}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.forks_count}} </td>
           </ng-container>
 
           <!-- Symbol Column -->
           <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
             <td mat-cell *matCellDef="let element"> Abrir </td>
           </ng-container>
 

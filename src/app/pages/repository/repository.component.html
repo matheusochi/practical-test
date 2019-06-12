@@ -2,11 +2,11 @@
   <div class="container">
     <div class="repository-content">
 
-      <app-user-aside></app-user-aside>
+      <app-user-aside [user]="this.user"></app-user-aside>
 
-      <div class="repository-info-wrapper">
+      <div class="repository-info-wrapper" *ngIf="this.repository">
         <div class="repository-info">
-          <h1 class="title">matheusochi/portfolio <a class="repository-link" href="#"><fa name="external-link"></fa></a></h1>
+          <h1 class="title">{{repository.name}} <a class="repository-link" href="#"><fa name="external-link"></fa></a></h1>
           <p class="description">One framework. Mobile & desktop. https://angular.io</p>
           <div class="repository-numbers">
             <p class="repository-stars item">

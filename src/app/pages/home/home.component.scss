@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,6 +76,8 @@
       }
 
       .search-button {
+        opacity: 0;
+        visibility: hidden;
         background: none;
         border: 0;
         color: #fff;
@@ -85,6 +87,15 @@
         transform: translateY(-50%);
         right: 1px;
         cursor: pointer;
+        transition: all .3s;
+      }
+
+      &.ng-valid {
+        .search-button {
+          opacity: 1;
+          visibility: visible;
+          transition: all .3s;
+        }
       }
     }
   }
