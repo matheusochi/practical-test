@@ -1,9 +1,3 @@
-@mixin overflow-wrap {
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
 .user {
   padding: 50px 0;
   position: relative;
@@ -35,88 +29,6 @@
       grid-template-columns: 25% 70%;
       grid-column-gap: 5%;
       background: #fff;
-    }
-
-    .user-header {
-      @media screen and (min-width: 768px) {
-        display: flex;
-        margin-bottom: 2.5rem;
-      }
-
-      @media screen and (min-width: 992px) {
-        padding: 40px 0 0;
-        display: block;
-      }
-
-      .user-image {
-        max-width: 100%;
-
-        @media screen and (min-width: 768px) {
-          margin-right: 60px;
-        }
-
-        @media screen and (min-width: 992px) {
-          margin-right: 0;
-        }
-      }
-
-      .user-info {
-        margin-bottom: 3rem;
-
-        @media screen and (min-width: 992px) {
-          margin-bottom: 0;
-        }
-
-        .name {
-          margin-top: 10px;
-          margin-bottom: 5px;
-          font-size: 1.6rem;
-          @include overflow-wrap;
-        }
-
-        .username {
-          font-weight: bold;
-          color: #777;
-          margin: 0;
-          @include overflow-wrap;
-        }
-
-        .description {
-          font-weight: 400;
-          margin-top: 10px;
-          font-size: 1.0rem;
-          @include overflow-wrap;
-        }
-
-        .additional-info {
-          padding-left: 0;
-
-          li {
-            list-style: none;
-            color: #777;
-            margin-bottom: 5px;
-            font-size: .9rem;
-            @include overflow-wrap;
-
-            fa {
-              width: 20px;
-              display: inline-block;
-              text-align: center;
-              margin-right: 10px;
-            }
-          }
-        }
-
-        .social {
-          display: grid;
-          grid-template-columns: 33% 33% 33%;
-          margin-top: 2rem;
-
-          .item {
-            text-align: center;
-          }
-        }
-      }
     }
 
     .user-repositories {

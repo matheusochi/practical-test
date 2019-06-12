@@ -1,0 +1,91 @@
+.repository {
+  padding: 50px 0;
+  position: relative;
+
+  @media screen and (min-width: 992px) {
+    padding: 0;
+    background-image: url('assets/img/home/background.jpg');
+    background-position: center;
+    background-size: cover;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .repository-content {
+    @media screen and (min-width: 992px) {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: 25% 70%;
+      grid-column-gap: 5%;
+      background: #fff;
+    }
+
+    .repository-info-wrapper {
+      @media screen and (min-width: 992px) {
+        padding: 40px 0 0;
+      }
+
+      .repository-info {
+        .title {
+          font-weight: 600;
+          margin-top: 0;
+          margin-bottom: 5px;
+
+          .repository-link {
+            font-size: 16px;
+            display: inline-block;
+            margin-left: 5px;
+          }
+        }
+
+        .description {
+          margin: 0;
+        }
+
+        .repository-numbers {
+          margin: 10px 0;
+
+          .item {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 5px 10px;
+            background: #dedede;
+            border-radius: 25px;
+
+            &:first-child {
+              margin: 0 10px 0 0;
+            }
+          }
+        }
+
+        .repository-languages {
+          .item {
+            display: inline-block;
+            margin: 3px 5px;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-size: 13px;
+            background: #f1f8ff;
+            color: #0366d6;
+
+            &:first-child {
+              margin: 3px 5px 3px 0;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

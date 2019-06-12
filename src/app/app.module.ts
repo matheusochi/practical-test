@@ -17,7 +17,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

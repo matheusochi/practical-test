@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'user',
     loadChildren: '@pages/user/user.module#UserModule'
   },
+  {
+    path: 'repository',
+    loadChildren: '@pages/repository/repository.module#RepositoryModule'
+  },
   {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
