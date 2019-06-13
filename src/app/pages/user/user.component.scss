@@ -60,7 +60,12 @@
     }
 
     .user-repositories {
+      @media screen and (min-width: 768px) {
+        margin-top: 40px;
+      }
+
       @media screen and (min-width: 992px) {
+        margin-top: 0;
         padding: 0 0 40px;
       }
 
@@ -90,6 +95,10 @@
 
         .stars {
           text-align: center;
+
+          @media screen and (min-width: 768px) {
+            text-align: left;
+          }
         }
 
         .actions-wrapper {
