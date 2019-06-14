@@ -1,4 +1,4 @@
-# Pratical Test
+# Practical Test
 
 > Search GitHub users and see their repositories. Project made for a selection process. 
 
